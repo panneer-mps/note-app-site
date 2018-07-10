@@ -1,0 +1,235 @@
+.category-banner {
+    padding: 150px 0 100px;
+    background-blend-mode: multiply, normal;
+    background-image: linear-gradient(357deg, #5ecaff, #776aff 74%), linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.2));
+    padding: 150px 0 100px;
+}
+.category-banner p {
+    font-size: 18px;
+    font-weight: normal;
+}
+.category-banner + section.epics-section .epics-section-heading p, .left-right-wrap p {
+    font-size: 14px;
+}
+.category-banner + section.epics-section .epics-section-heading p.epics-source{
+    font-size: 10px;
+}
+.epics-section  .epics-cat-sec-wrap{
+    display: flex;
+}
+.category-banner + .epics-section .cat-sec-left {
+    float: left;
+    width: 71%;
+    padding-right: 40px;
+}
+.category-banner + .epics-section .cat-sec-right {
+    float: right;
+    margin: initial;
+    padding-left: 40px;
+    font-size: 14px;
+    color: #4a5668;
+    font-weight: 600;
+    border-left: 1px solid #ccc;
+}
+.cat-sec-left ul.software-list {
+    margin-top: 30px;
+}
+.cat-sec-left .software-list li {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    min-height: 130px;
+}
+.cat-sec-left .software-list li figure {
+    float: left;
+    margin-right: 20px;
+}
+.cat-sec-left .software-list li figure img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+.cat-sec-left .software-list li figcaption h5 {
+    height: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #363f4d;
+    margin: 0 0 2px;
+}
+.cat-sec-left .software-list li figcaption span {
+    font-size: 14px;
+    line-height: 1.71;
+    color: #363f4d;
+}
+.cat-sec-left .software-list li figcaption p {
+    font-size: 12px;
+    line-height: 2;
+}
+.cat-sec-left .software-list li figure .epics-review-stars span {
+    color: #f5a01f;
+    font-size: 12px;
+}
+.cat-sec-left .epic-software-content {
+    padding: 30px 0 0;
+    margin: 50px 0 30px;
+    border-top: solid 0.5px rgba(74, 86, 104, 0.5);
+}
+/*.cat-sec-left .epic-software-content .epics-section-heading img {
+    width: 260px;
+    height: 176px;
+    object-fit: contain;
+    float: right;
+}*/
+.epic-software-content .epics-section-heading h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #363f4d;
+    margin: 20px 0 10px;
+}
+.category-banner + section.epics-section .epics-section-heading ul {
+    list-style: disc;
+    margin: 20px 20px 0;
+    font-size: 14px;
+    line-height: 2;
+    text-align: left;
+    color: #5b6980;
+}
+table, tbody, td, th, thead, tr{
+  margin: 0;
+    border: none;
+    border-collapse: collapse;
+}
+.epic-software-content table {
+    width: 100%;
+    margin-top: 30px;
+    background-color: rgba(94, 127, 255, 0.1);
+    border: solid 1px rgba(94, 127, 255, 0.5);
+}
+.epic-software-content table td {
+    width: 50%;
+    font-size: 14px;
+    line-height: 2;
+    color: #5b6980;
+    border: solid 1px rgba(94, 127, 255, 0.5);
+    padding: 10px 10px 10px 20px;
+}
+.epic-software-content table td.leftsec {
+  background-color: rgba(94, 127, 255, 0.1);
+}
+
+
+/* right aside */
+
+.cat-sec-right .cat-others input.cat-search {
+    width: 233px;
+    height: 46px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 1px #c9c9c9;
+    font-size: 14px;
+    line-height: 1.14;
+    color: rgba(77, 77, 77, 0.4);
+    padding: 14px;
+    margin-bottom: 30px;
+}
+.cat-sec-right .cat-others .other-categories {
+    margin: 30px 0 20px;
+}
+.cat-sec-right .cat-others input.cat-search + .other-categories {
+    margin-top: 0;
+}
+.cat-sec-right .other-categories h4 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: #363f4d;
+}
+.cat-sec-right .other-categories ul li {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2.14;
+}
+.cat-sec-right .other-categories ul li .epics-checkbox {
+    width: 15px;
+    display: inline-block;
+    height: 16px;
+    border: solid 1px #979797;
+    border-radius: 2px;
+    position: relative;
+    margin-right: 10px;
+    top: 3px;
+    cursor: pointer;
+}
+.cat-sec-right .other-categories ul li .epics-review-stars {
+    display: inline-block;
+}
+.cat-sec-right .other-categories ul li .icon-star {
+    font-size: 10px;
+    color: #f5a01f;
+}
+.software-list .epics-review-stars{
+  margin: 0;
+}
+.epics-right-sec {
+    float: left;
+    width: 40%;
+}
+.epics-left-sec {
+    float: left;
+}
+.col-5{
+  width: 60%;
+}
+.left-right-wrap {
+    overflow: hidden;
+}
+.software-list figcaption{
+    position: relative;
+}
+.visit-site {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -20px;
+}
+
+@media only screen and (max-width:780px){
+.epics-section  .epics-cat-sec-wrap{
+    display: block;
+}
+.category-banner + .epics-section .cat-sec-left{
+    width: 100%;
+    float: none;
+    padding-right: 0;
+}
+.category-banner + .epics-section .cat-sec-right{
+    width: 100%;
+    float: none;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #ccc;
+    padding-top: 40px;
+}
+.epics-left-sec,.epics-right-sec{
+    float: none;
+    width: 100%;
+}
+.epics-right-sec {
+    width: 50%;
+    margin: 0 auto;
+}
+
+}
+@media only screen and (max-width:480px){
+
+a.epics-btn-visit {
+    border: 1px solid #b3b3b3;
+    color: #4a5668;
+    min-width: 0;
+    font-size: 0.625rem;
+    padding: 7px 5px;
+    margin-top: 20px;
+}
+}
