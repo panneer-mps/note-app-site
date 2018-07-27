@@ -435,18 +435,18 @@ a.epics-btn-visit {
   }
   .epics-nav-wrap .epics-logo, .epics-footer .epics-logo {
     width: 197px;
-    height: 36px;
+    height: 40px;
     margin: 17px 0;
     background-size: 197px;
     display: inline-block;
     vertical-align: middle;
-    background-image: url('../assets/images/branding/freshkeep.png');
+    background-image: url('../assets/images/branding/freshnotes.png');
   }
   .epics-footer .epics-logo{
-        background-image: url('../assets/images/branding/freshkeep.png');
+        background-image: url('../assets/images/branding/freshnotes.png');
   }
   .epics-nav-wrap.sticky-nav-active .epics-logo {
-  background-image: url('../assets/images/branding/freshkeep.png');
+  background-image: url('../assets/images/branding/freshnotes.png');
 }
 
 .epics-nav-wrap.sticky-nav-active .nav-item a.epics-nav-btn{
