@@ -747,8 +747,8 @@ p.footer-copyrights-text {
     color: #fff;
 }
 .blog-box-left {
-    min-height: 180px;
-    background: #ccc;
+    min-height: 160px;
+    /* background: #ccc; */
 }
 .icon-search::before {
   content: '\e92c';
