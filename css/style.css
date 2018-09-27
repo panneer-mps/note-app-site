@@ -370,6 +370,7 @@ a.epics-btn-visit {
 }
 .testimonial-logo {
   float: right;
+  width: 100px;
 }
 .epics-author-bio .image-small {
     width: 70px;
@@ -745,6 +746,7 @@ a.icon-twitter {
 }
 p.footer-copyrights-text {
     color: #fff;
+    font-size: 12px;
 }
 .blog-box-left {
     min-height: 160px;

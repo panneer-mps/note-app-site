@@ -219,10 +219,11 @@ a:hover {
     margin: 0% 2% 0% 0%;
 }
 .priceing-table h1 {
-    font-size: 3em;
+    font-size: 35px;
     color: #fff;
     text-align: center;
-    margin: 2em 0em 1em;
+    margin: 3em 0em 1em;
+    line-height: 50px;
 }
 .wthree {
     margin: 0% 0% 0% 0%;
@@ -245,9 +246,10 @@ a:hover {
     background: #ecb412;
     text-align: center;
     border-radius: 5px 5px 0px 0px;
+    min-height: 215px;
 }
 .price-gd-top h4 {
-    font-size: 1.8em;
+    font-size: 18px;
     color: #fff;
     padding: 0.4em 1em;
     background: #d29d05;
@@ -255,12 +257,12 @@ a:hover {
 }
 /*-- w3layouts --*/
 .price-gd-top h3 {
-    padding: 0.2em 0em 0.1em 0em;
-    font-size: 2.5em;
+    padding: 20px 0 5px;
+    font-size: 40px;
     color: #fff;
 }
 .price-gd-top h5 {
-    font-size: 1em;
+    font-size: 12px;
     color: #fff;
     padding: 0.2em 0em 0.8em 0em;
 }
@@ -268,6 +270,7 @@ a:hover {
     background: #fff;
     text-align: center;
     padding: 1em 0em;
+    min-height: 200px;
 }
 .price-gd-top.pric-clr2 h4 {
     background: #7d1e4a;
@@ -311,6 +314,7 @@ a:hover {
     padding: 0.5em 1.5em;
     background: #d29d05;
     border-radius: 3px;
+    width: 150px;
 }
 .price-grid {
     margin-bottom: 3em;
@@ -981,6 +985,72 @@ p.bottom {
 .clear {
     clear: both;
 }
+
+
+.drop-down{
+    position: relative;
+    padding: 10px 10px 20px;
+  }
+  
+  .drop-down .selected a{
+    display: block;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+  
+  .drop-down .selected a span{
+    cursor:pointer; 
+    display:block; 
+    padding:5px;
+    padding-left: 10px;
+    text-align: left;
+  }
+  
+  .drop-down .option{
+    position:relative; 
+  }
+  
+  .drop-down .options ul{
+    background: #fff none repeat scroll 0 0;
+    display: none;
+    list-style: none;
+    padding: 0px 0px;
+    position: absolute;
+    left: 10px;
+    top: 48px;
+    width: 201px;
+    border: 1px solid #ccc7c7;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  
+  .drop-down .selected span.value, .drop-down .options span.value{
+    display: none;
+  }
+  
+  .drop-down .options ul li a{
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    color: #645454;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .drop-down .options ul li a:hover{
+    color: #656262;
+    transition: 0.2s ease;
+    background-color: #f1f1f1;
+  }
+
+
+
 /*--media quries start here--*/
 @media(max-width:1440px) {}
 @media(max-width:1366px) {

@@ -12,15 +12,59 @@
         <script src="https://wchat.freshchat.com/js/widget.js"></script>
       </head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
-<script>
-  $( document ).ready(function() {
-    console.log( "ready!" );
-    $.cookie('the_cookie', 'the_value');
-    console.log( "ready!",$.cookie('the_cookie') );
-});
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
+    <script type="text/javascript">
+      // var cookieName = 'HelloWorld';
+      // var cookieValue = 'HelloWorld';
+      // var myDate = new Date();
+      // myDate.setMonth(myDate.getMonth() + 12);
+      // document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate 
+      //                   + ";domain=.appninja.org;path=/";
 
+      // $("form").validate();
+      // validate signup form on keyup and submit
+$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+      // Create a Cookie for one week
+      var getEmail = $('#email').val();
+      document.cookie = "appninjauser="+getEmail
+// Read the cookie (note this will only work on the page loads after the cookie is created)
+// var myCookie = readCookie('myCookie');
+// console.log(myCookie); // Outputs: "The value of my cookie..."
+
+// Erase the cookie (only works on page loads after the cookie was created)
+// eraseCookie('myCookie')
+      form.submit();
+		}
+});
+  $(document).ready(function(){
+		$("#fm-form").validate({
+			rules: {
+				username: {
+					required: true,
+					minlength: 2
+				},
+				company: {
+					required: true,
+					minlength: 2
+				},
+				email: {
+					required: true,
+					email: true
+				},
+			},
+			messages: {
+				username: {
+					required: "Please enter a username",
+				},
+				company: {
+					required: "Please provide a company name",
+				},
+				email: "Please enter a valid email address",
+			}
+		});
+  })
   </script>
 
     <body>
@@ -52,22 +96,24 @@
   </div>
     </nav>
 <!--   Banner section -->
-      <form action="https://notes.appninja.org/" id="fn-form">
+      <form action="https://notes.appninja.org" id="fm-form" method="post" >
       
         <h1>Try Appninja free trial</h1>        
         <fieldset>
+          <div class="fields-wrap">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name">
-          
+          <input type="text" id="username" name="username">
+        </div>
+        <div class="fields-wrap">
           <label for="mail">Email:</label>
-          <input type="email" id="fm-email" name="user_email">
-          
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="user_password">
-          
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="fields-wrap">
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company">
+        </div>
         </fieldset>
-        
-        <button type="submit" onsubmit="storeValues()">Sign Up</button>
+        <button type="submit" >Sign Up</button>
       </form>
       <footer class="epics-footer">
         <div class="epics-wrap">

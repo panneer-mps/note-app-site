@@ -8,11 +8,57 @@
 <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 <script src='//cdn.freshmarketer.com/220708/765180.js'></script>
 <script src="https://wchat.freshchat.com/js/widget.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
 </head>
-<body>
-<body>
+<script>
+	$(document).ready(function(){
+// alert("sam")
+//TOGGLING NESTED ul
+$(".drop-down.premi .selected a").click(function(e) {
+	e.preventDefault();
+    $(".drop-down.premi .options ul").toggle();
+});
+$(".drop-down.standard .selected a").click(function(e) {
+	e.preventDefault();
+    $(".drop-down.standard .options ul").toggle();
+});
+
+	$(".drop-down .options ul li a").click(function(e) {
+		//alert("pp-sam")
+		e.preventDefault();
+		var getClass=$(this).attr('class');
 		
+		if(getClass=="pre"){
+			var text = $(this).html();
+			$(".drop-down.premi .selected a span").html(text);
+    	$(".drop-down.premi .options ul").hide();
+			var getVal = $(".drop-down.premi .selected a span span").text();
+			$('.pre-val').text('$'+getVal*40)
+
+		}
+		else{
+			var text = $(this).html();
+			$(".drop-down.standard .selected a span").html(text);
+    	$(".drop-down.standard .options ul").hide();
+			var getVal = $(".drop-down.standard .selected a span span").text();
+			$('.stand-val').text('$'+getVal*20)
+
+
+		}
+}); 
+
+
+//HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (! $clicked.parents().hasClass("drop-down"))
+        $(".drop-down .options ul").hide();
+});
+})
+</script>
+<body>
+
 	<!--   Header section -->
 	<nav>
 		<div class="epics-nav-wrap">
@@ -49,9 +95,9 @@
 			<div class="price-grid">
 	    		   <div class="price-block agile">
 		    			<div class="price-gd-top pric-clr1">
-		    				<h4>Basic</h4>
-		    				<h3>$5</h3>
-		    				<h5>1 month</h5>
+		    				<h4>Free</h4>
+		    				<h3>$0</h3>
+		    				<h5>/agent/month billed monthly</h5>
 		    			</div>
 		    			<div class="price-gd-bottom">
 		    				<div class="price-list">
@@ -59,8 +105,6 @@
 			    					<li>Full access</li>
 			    					<li>Documentation</li>
 			    					<li>Customers Support</li>
-			    					<li>Free Updates</li>
-			    					<li>Unlimited Domains</li>
 			    				</ul>
 		    				</div>
 		    			</div>
@@ -73,8 +117,20 @@
 	    			<div class="price-block agile">
 		    			<div class="price-gd-top pric-clr2">
 		    				<h4>Standard</h4>
-		    				<h3>$10</h3>
-		    				<h5>5 months</h5>
+		    				<h3 class="stand-val">$20</h3>
+								<h5>/agent/month billed monthly</h5>
+								<div class="drop-down standard">
+										<div class="selected">
+											<a href="#"><span>Select agents</span></a>
+										</div>
+										<div class="options">
+											<ul>
+												<li ><a href="#"class="stand">10 Agents<span class="value">10</span></a></li>
+												<li><a href="#" class="stand">100 Agents<span class="value">100</span></a></li>
+												<li><a href="#" class="stand">1000 Agents<span class="value">1000</span></a></li>
+											</ul>
+										</div>
+									</div>
 		    			</div>
 		    			<div class="price-gd-bottom">
 		    				<div class="price-list">
@@ -83,7 +139,6 @@
 			    					<li>Documentation</li>
 			    					<li>Customers Support</li>
 			    					<li>Free Updates</li>
-			    					<li>Unlimited Domains</li>
 			    				</ul>
 		    				</div>
 		    			</div>
@@ -96,9 +151,22 @@
 	    			<div class="price-block agile">
 		    			<div class="price-gd-top pric-clr3">
 		    				<h4>Premium</h4>
-		    				<h3>$20</h3>
-		    				<h5>Free for 2 months</h5>
-		    			</div>
+		    				<h3 class="pre-val">$40</h3>
+								<h5>/agent/month billed monthly</h5>
+								<div class="drop-down premi">
+										<div class="selected">
+											<a href="#"><span>Select agents</span></a>
+										</div>
+										<div class="options">
+											<ul>
+												<li ><a href="#"class="pre">10 Agents<span class="value">10</span></a></li>
+												<li><a href="#" class="pre">100 Agents<span class="value">100</span></a></li>
+												<li><a href="#" class="pre">1000 Agents<span class="value">1000</span></a></li>
+											</ul>
+										</div>
+									</div>
+							</div>
+							
 		    			<div class="price-gd-bottom">
 		    				<div class="price-list">
 			    				<ul>
@@ -111,7 +179,7 @@
 		    				</div>
 		    			</div>
 		    		    <div class="price-selet pric-sclr3">
-		    			   	<a class="popup-with-zoom-anim" href="signup.html">Sign Up</a>
+		    			   	<a class="popup-with-zoom-anim" href="#">Contact Us</a>
 		    			</div>
 		    		</div>
     	       </div>
