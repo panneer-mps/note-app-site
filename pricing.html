@@ -34,6 +34,20 @@ $(".drop-down.standard .selected a").click(function(e) {
 			$(".drop-down.premi .selected a span").html(text);
     	$(".drop-down.premi .options ul").hide();
 			var getVal = $(".drop-down.premi .selected a span span").text();
+			if(getVal==100){
+				console.log(window.fcWidget.isOpen(),"tetststststst")
+				if (window.fcWidget.isOpen() != true) {
+					//Or do something else :)
+					console.log("offf")
+					window.fcWidget.track('select100_user', {
+          //Key and value can be anything relatable to your web app.
+        	});
+    		}
+				else{
+					console.log("onnn")
+				}
+				
+			}
 			$('.pre-val').text('$'+getVal*40)
 
 		}
@@ -94,7 +108,7 @@ $(document).bind('click', function(e) {
 							<h1>21-day FREE trial. No credit card required.</h1>
 							<p class="epics-sub-text">Write wherever inspiration strikes</p>
 							<div class="price-selet pric-sclr3 re-bg">
-									<a class="popup-with-zoom-anim top-btn-banner" href="signup">Try for Free</a>
+									<a class="popup-with-zoom-anim top-btn-banner" href="signup">Sign Up</a>
 						 </div>
 							<!-- <div class="search-wrap">
 								 <form autocomplete="off" action="#" method="POST" novalidate="novalidate" class="epics-search" >
@@ -114,7 +128,7 @@ $(document).bind('click', function(e) {
 		    			<div class="price-gd-top pric-clr1">
 		    				<h4>Free</h4>
 		    				<h3>$0</h3>
-		    				<h5>/agent/month billed monthly</h5>
+		    				<h5>/user/month billed monthly</h5>
 		    			</div>
 		    			<div class="price-gd-bottom">
 		    				<div class="price-list">
@@ -135,16 +149,16 @@ $(document).bind('click', function(e) {
 		    			<div class="price-gd-top pric-clr2">
 		    				<h4>Standard</h4>
 		    				<h3 class="stand-val">$20</h3>
-								<h5>/agent/month billed monthly</h5>
+								<h5>/user/month billed monthly</h5>
 								<div class="drop-down standard">
 										<div class="selected">
-											<a href="#" class="drop-box"><span>Select agents</span></a>
+											<a href="#" class="drop-box"><span>Select Users</span></a>
 										</div>
 										<div class="options">
 											<ul>
-												<li ><a href="#"class="stand">10 Agents<span class="value">10</span></a></li>
-												<li><a href="#" class="stand">100 Agents<span class="value">100</span></a></li>
-												<li><a href="#" class="stand">1000 Agents<span class="value">1000</span></a></li>
+												<li ><a href="#"class="stand">10 Users<span class="value">10</span></a></li>
+												<li><a href="#" class="stand">100 Users<span class="value">100</span></a></li>
+												<li><a href="#" class="stand">1000 Users<span class="value">1000</span></a></li>
 											</ul>
 										</div>
 									</div>
@@ -160,7 +174,7 @@ $(document).bind('click', function(e) {
 		    				</div>
 		    			</div>
 		    		    <div class="price-selet pric-sclr2">
-		    			   	 <a class="popup-with-zoom-anim" href="signup.html">Try for Free</a>
+		    			   	 <a class="popup-with-zoom-anim" href="signup.html">Sign Up</a>
 		    			</div>
 		    		</div>
 	    		</div>
@@ -169,16 +183,16 @@ $(document).bind('click', function(e) {
 		    			<div class="price-gd-top pric-clr3">
 		    				<h4>Premium</h4>
 		    				<h3 class="pre-val">$40</h3>
-								<h5>/agent/month billed monthly</h5>
+								<h5>/user/month billed monthly</h5>
 								<div class="drop-down premi">
 										<div class="selected">
-											<a href="#" class="drop-box"><span>Select agents</span></a>
+											<a href="#" class="drop-box"><span>Select Users</span></a>
 										</div>
 										<div class="options">
 											<ul>
-												<li ><a href="#"class="pre">10 Agents<span class="value">10</span></a></li>
-												<li><a href="#" class="pre">100 Agents<span class="value">100</span></a></li>
-												<li><a href="#" class="pre">1000 Agents<span class="value">1000</span></a></li>
+												<li ><a href="#"class="pre">10 Users<span class="value">10</span></a></li>
+												<li><a href="#" class="pre">100 Users<span class="value">100</span></a></li>
+												<li><a href="#" class="pre">1000 Users<span class="value">1000</span></a></li>
 											</ul>
 										</div>
 									</div>
@@ -196,7 +210,7 @@ $(document).bind('click', function(e) {
 		    				</div>
 		    			</div>
 		    		    <div class="price-selet pric-sclr3">
-		    			   	<a class="popup-with-zoom-anim" href="#">Try for Free</a>
+		    			   	<a class="popup-with-zoom-anim" href="#">Sign Up</a>
 		    			</div>
 		    		</div>
     	       </div>
