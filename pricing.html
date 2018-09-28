@@ -35,17 +35,12 @@ $(".drop-down.standard .selected a").click(function(e) {
     	$(".drop-down.premi .options ul").hide();
 			var getVal = $(".drop-down.premi .selected a span span").text();
 			if(getVal==100){
-				console.log(window.fcWidget.isOpen(),"tetststststst")
+				console.log(window.fcWidget.isOpen(),"100user")
 				if (window.fcWidget.isOpen() != true) {
-					//Or do something else :)
-					console.log("offf")
 					window.fcWidget.track('select100_user', {
           //Key and value can be anything relatable to your web app.
         	});
     		}
-				else{
-					console.log("onnn")
-				}
 				
 			}
 			$('.pre-val').text('$'+getVal*40)
