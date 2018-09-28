@@ -28,14 +28,16 @@ $.validator.setDefaults({
 			// alert("submitted!");
       // Create a Cookie for one week
       var getEmail = $('#email').val();
-      document.cookie = "appninjauser="+getEmail
+      document.cookie = "appninjauser="+getEmail+'; domain=appninja.org';
+
+      // document.cookie = "appninjauser="+getEmail
 // Read the cookie (note this will only work on the page loads after the cookie is created)
 // var myCookie = readCookie('myCookie');
 // console.log(myCookie); // Outputs: "The value of my cookie..."
 
 // Erase the cookie (only works on page loads after the cookie was created)
 // eraseCookie('myCookie')
-      $("#fm-form").submit();
+      form.submit();
 		}
 });
   $(document).ready(function(){
@@ -117,7 +119,7 @@ $.validator.setDefaults({
 
 
 
-      <form action="https://notes.appninja.org/" id="fm-form" >
+      <form action="http://localhost:7777/" id="fm-form" >
       
         <h1>Try Appninja free trial</h1>        
         <fieldset>
