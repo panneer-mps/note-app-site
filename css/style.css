@@ -148,8 +148,12 @@ p, .p{
   padding: 50px 0;
 }
 .epics-banner{
-  background-image: linear-gradient(to right bottom, #34c1e8, #00cfde, #00dac6, #5de1a5, #99e581);
+  /* background-image: linear-gradient(to right bottom, #34c1e8, #00cfde, #00dac6, #5de1a5, #99e581); */
   padding: 200px 0;
+  /* background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%); */
+  background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
+  
+  
 }
 .epics-wrap{
   max-width: 1140px;
@@ -220,6 +224,19 @@ p, .p{
 
 /* categorie section */
 
+
+.email-field:after {
+  content: '';
+  width: 32px;
+  height: 26px;
+  position: absolute;
+  right: 0;
+  opacity: .5;
+  background-image: url('../assets/images/branding/search-new.svg');
+  background-repeat: no-repeat;
+  top: 12px;
+}
+
 .epics-cat-wrap {
   margin: 30px 0;
   overflow: hidden;
@@ -265,7 +282,9 @@ p, .p{
     vertical-align: bottom;
     min-width: 200px;
     font-weight: bold;
-    background:#525204;
+    /* background:#525204; */
+    background: #CECE24;
+    
 }
 a.epics-btn-visit {
   border: 1px solid #b3b3b3;
@@ -293,7 +312,7 @@ a.epics-btn-visit {
   border-top-right-radius: 5px;
 }
 .top-rated-sec-bottom {
-  padding: 20px;
+  padding: 20px 20px 60px;
   background: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -436,9 +455,9 @@ a.epics-btn-visit {
   }
   .epics-nav-wrap .epics-logo, .epics-footer .epics-logo {
     width: 197px;
-    height: 45px;
+    height: 38px;
     margin: 17px 0;
-    background-size: 197px;
+    background-size: 160px;
     display: inline-block;
     vertical-align: middle;
     background-image: url('../assets/images/branding/freshnotes.svg');
@@ -467,7 +486,7 @@ a.epics-btn-visit {
     pointer-events: all;
     z-index: 200;
     float: right;
-    margin-top: 15px;
+    margin-top: 10px;
     width: auto;
   }
   .nav-item {
@@ -562,18 +581,16 @@ button, input {
     display: inline-block;
   }
 .epics-search input, .epics-search .epics-btn{
-    height: 45px;
-    outline: 0;
-    border-radius: 3px;
-    border: solid 1px #ccc;
-    padding: 9px 9px 9px 12px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    min-width: 218px;
+  height: 45px;
+  outline: 0;
+  border-radius: 3px;
+  padding: 10px 9px 9px 19px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  font-size: 12px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .epics-search .epics-btn{
@@ -591,7 +608,7 @@ button, input {
 
 
 .epics-search .search-box{
-  min-width: 300px;
+  min-width: 420px;
   background: #fff;
 }
 .search-wrap{
@@ -749,7 +766,7 @@ p.footer-copyrights-text {
     font-size: 12px;
 }
 .blog-box-left {
-    min-height: 160px;
+    min-height: 155px;
     /* background: #ccc; */
 }
 .icon-search::before {

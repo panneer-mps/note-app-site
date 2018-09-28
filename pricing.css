@@ -178,8 +178,10 @@ body {
     margin: 0;
     background-size: cover;
     font-family: 'Nunito', sans-serif;
-    background-image: linear-gradient(to right bottom, #34c1e8, #00cfde, #00dac6, #5de1a5, #99e581);
-    
+    /* background-image: linear-gradient(to right bottom, #34c1e8, #00cfde, #00dac6, #5de1a5, #99e581); */
+    /* background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%); */
+    /* background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%); */
+    background: #f6f6f6;
 }
 h1,
 h2,
@@ -216,21 +218,22 @@ a:hover {
 .price-grid {
     float: left;
     width: 31%;
-    margin: 0% 2% 0% 0%;
+    margin: 0% 3% 0% 0%;
 }
 .priceing-table h1 {
-    font-size: 35px;
+    font-size: 32px;
     color: #fff;
     text-align: center;
-    margin: 3em 0em 1em;
+    margin: 10px;
     line-height: 50px;
+    font-family: 'Open Sans', sans-serif;
 }
 .wthree {
     margin: 0% 0% 0% 0%;
 }
 .priceing-table-main {
-    width: 50%;
-    margin: 0 auto;
+    width: 60%;
+    margin: 80px auto 0;
     margin-bottom: 100px;
 }
 .prices-head h2 {
@@ -243,27 +246,29 @@ a:hover {
     list-style: none;
 }
 .price-gd-top {
-    background: #ecb412;
+    background: #e7eafd;
     text-align: center;
     border-radius: 5px 5px 0px 0px;
-    min-height: 215px;
+    min-height: 245px;
 }
 .price-gd-top h4 {
-    font-size: 18px;
+    font-size: 13px;
     color: #fff;
-    padding: 0.4em 1em;
-    background: #d29d05;
+    padding: 13px;
+    background: #6369e4;
     border-radius: 5px 5px 0px 0px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 /*-- w3layouts --*/
 .price-gd-top h3 {
     padding: 20px 0 5px;
     font-size: 40px;
-    color: #fff;
+    color: #000;
 }
 .price-gd-top h5 {
     font-size: 12px;
-    color: #fff;
+    color: #000;
     padding: 0.2em 0em 0.8em 0em;
 }
 .price-gd-bottom {
@@ -272,7 +277,7 @@ a:hover {
     padding: 1em 0em;
     min-height: 200px;
 }
-.price-gd-top.pric-clr2 h4 {
+/* .price-gd-top.pric-clr2 h4 {
     background: #7d1e4a;
 }
 .price-gd-top.pric-clr2 {
@@ -289,17 +294,18 @@ a:hover {
 }
 .price-selet.pric-sclr3 a {
     background: #14646d;
-}
+} */
 .price-list ul li {
     padding: 0.5em 0em;
     font-size: 0.9em;
     color: #545454;
 }
 .price-selet {
-    padding: 1em 0em;
+    padding: 1em 0em 2em;
     text-align: center;
     background: #fff;
     border-radius: 0px 0px 5px 5px;
+    border-radius: 4px;
 }
 /*-- agileits --*/
 .price-selet a {
@@ -311,20 +317,21 @@ a:hover {
     font-size: 0.9em;
     color: #ffffff;
     display: inline-block;
-    padding: 0.5em 1.5em;
-    background: #d29d05;
+    padding: 10px 1.5em;
+    background: #5b59d6;
     border-radius: 3px;
     width: 150px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
 }
-.price-grid {
-    margin-bottom: 3em;
-}
+
 .price-block {
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15); */
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
+    border-radius: 4px;
 }
 /* .price-block:hover {
     transform: scale(1.1);
@@ -989,15 +996,15 @@ p.bottom {
 
 .drop-down{
     position: relative;
-    padding: 10px 10px 20px;
+    padding: 10px 10px 40px;
   }
   
   .drop-down .selected a{
     display: block;
-    border: 1px solid #ffffff;
+    border: 1px solid #bab8f9;
     border-radius: 4px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000;
     font-size: 14px;
     padding: 4px 0;
   }
@@ -1021,11 +1028,12 @@ p.bottom {
     padding: 0px 0px;
     position: absolute;
     left: 10px;
-    top: 48px;
-    width: 201px;
-    border: 1px solid #ccc7c7;
+    top: 46px;
+    width: 247px;
+    border: 1px solid #bab8f9;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    border-top: none;
   }
   
   .drop-down .selected span.value, .drop-down .options span.value{
@@ -1046,10 +1054,26 @@ p.bottom {
   .drop-down .options ul li a:hover{
     color: #656262;
     transition: 0.2s ease;
-    background-color: #f1f1f1;
+    background-color: #e7eafe;
   }
+  a.drop-box:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    top: 18px;
+    position: absolute;
+    right: 7px;
+    background-image: url(assets/images/branding/arrow-drop.svg);
+}
 
-
+.price-selet a.top-btn-banner{
+    background: #fff;
+    color: #504ebc;
+    width: 200px;
+}
+.re-bg{
+    background: none;    
+}
 
 /*--media quries start here--*/
 @media(max-width:1440px) {}
