@@ -13,20 +13,6 @@
       </head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyD0eO1asSPwjoYkQPG-IKO0QtGYaKHGjpw",
-        authDomain: "app-test-78aef.firebaseapp.com",
-        databaseURL: "https://app-test-78aef.firebaseio.com",
-        projectId: "app-test-78aef",
-        storageBucket: "app-test-78aef.appspot.com",
-        messagingSenderId: "673305716422"
-      };
-      firebase.initializeApp(config);
-    </script>
-
     <script type="text/javascript">
       // var cookieName = 'HelloWorld';
       // var cookieValue = 'HelloWorld';
@@ -38,27 +24,21 @@
       // $("form").validate();
       // validate signup form on keyup and submit
 $.validator.setDefaults({
+		submitHandler: function() {
+			// alert("submitted!");
+      // Create a Cookie for one week
+      var getEmail = $('#email').val();
+      document.cookie = "appninjauser="+getEmail+'; domain=appninja.org';
 
-  submitHandler: function (form) {
-    var param = {username: $('#username').val(), company: $('#company').val(), email: $('#email').val() };
-   var myDate = new Date();
-  $.ajax({
-        type: "POST",
-        url: "https://app-test-78aef.firebaseio.com/users.json",
-        data: JSON.stringify(param),
-        success: function () {
-          document.cookie = "appninjauser="+param.email+";domain=.appninja.org; path=/expires=" + myDate;
-          
-          console.log("form submit");
-          // debugger
-          form.submit();
-        },
-        failure:function(){
-          debugger
-        }
-    });
-    return false; // required to block normal submit since you used ajax
-  }
+      // document.cookie = "appninjauser="+getEmail
+// Read the cookie (note this will only work on the page loads after the cookie is created)
+// var myCookie = readCookie('myCookie');
+// console.log(myCookie); // Outputs: "The value of my cookie..."
+
+// Erase the cookie (only works on page loads after the cookie was created)
+// eraseCookie('myCookie')
+      form.submit();
+		}
 });
   $(document).ready(function(){
 		$("#fm-form").validate({
@@ -143,20 +123,12 @@ $.validator.setDefaults({
       
         <h1>Try Appninja free trial</h1>        
         <fieldset>
-          <div class="fields-wrap">
-          <label for="name">Name:</label>
-          <input type="text" id="username" name="username">
-        </div>
         <div class="fields-wrap">
           <label for="mail">Email:</label>
           <input type="email" id="email" name="email">
         </div>
-        <div class="fields-wrap">
-          <label for="company">Company:</label>
-          <input type="text" id="company" name="company">
-        </div>
         </fieldset>
-        <button type="submit" >Sign Up</button>
+        <button type="submit" >Login</button>
       </form>
       <footer class="epics-footer">
         <div class="epics-wrap">
