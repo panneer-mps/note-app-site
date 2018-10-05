@@ -23,46 +23,72 @@
 
       // $("form").validate();
       // validate signup form on keyup and submit
-$.validator.setDefaults({
-		submitHandler: function() {
-			// alert("submitted!");
-      // Create a Cookie for one week
-      var getEmail = $('#email').val();
-      document.cookie = "appninjauser="+getEmail+'; domain=appninja.org';
-
-      // document.cookie = "appninjauser="+getEmail
-// Read the cookie (note this will only work on the page loads after the cookie is created)
-// var myCookie = readCookie('myCookie');
-// console.log(myCookie); // Outputs: "The value of my cookie..."
-
-// Erase the cookie (only works on page loads after the cookie was created)
-// eraseCookie('myCookie')
-      form.submit();
-		}
-});
+      $.validator.setDefaults({
+        
+          submitHandler: function (form) {
+            var param = {email: $('#email').val() };
+           var myDate = new Date();
+           myDate.setMonth(myDate.getMonth() + 12);
+           var cookieName = 'appninjauser';
+          var cookieValue = param.email;
+          var age = 40000;
+        
+        
+          function getTopLevelDomain() {
+           var i = 0, domain = document.domain, parts = domain.split('.'),
+               tmpCookie = "_zg" + (new Date()).getTime();
+           while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
+               + tmpCookie) == -1) {
+             domain = parts.slice(-1 - (++i)).join('.');
+             document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
+           }
+           //deletes the tmp cookie.
+           document.cookie = tmpCookie
+               + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=" + domain + ";";
+           return domain;
+         };
+        
+         function setCookie(name, value, age) {
+          //  debugger;
+           var expiry = new Date(+new Date() + age);
+           var domain = getTopLevelDomain() || location.hostname;
+           document.cookie = name + "=" + value + ";domain=." + domain
+               + ";path=/;expires=" + expiry.toUTCString();
+             document.cookie = name + "=" + value + ";path=/; expires="
+                 + expiry.toUTCString();
+         };  
+         $.get('https://app-test-78aef.firebaseio.com/users.json')
+            .done(function(response) {
+                console.log("success", response);
+                for (x in response) {
+                  var ll= response[x]
+                  if(ll.email==cookieValue){
+                    console.log("sam--true");
+                    form.submit();
+                  }
+                  else{
+                    // $('#email').addClass('error');
+                    // $('#email-error').text('Please enter a valid email address')
+                    // $('#email-error').css("display: block;")
+                    console.log("there is no email id")
+                  }
+                  }
+                // debugger;
+                // $("#mypar").html(response.amount);
+        });
+            return false; // required to block normal submit since you used ajax
+          }
+        });
+        
   $(document).ready(function(){
 		$("#fm-form").validate({
 			rules: {
-				username: {
-					required: true,
-					minlength: 2
-				},
-				company: {
-					required: true,
-					minlength: 2
-				},
 				email: {
 					required: true,
 					email: true
-				},
+				}
 			},
 			messages: {
-				username: {
-					required: "Please enter a username",
-				},
-				company: {
-					required: "Please provide a company name",
-				},
 				email: "Please enter a valid email address",
 			}
 		});

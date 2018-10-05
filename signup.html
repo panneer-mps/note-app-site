@@ -63,16 +63,14 @@ $.validator.setDefaults({
  };
 
  function setCookie(name, value, age) {
-   debugger;
+  //  debugger;
    var expiry = new Date(+new Date() + age);
    var domain = getTopLevelDomain() || location.hostname;
    document.cookie = name + "=" + value + ";domain=." + domain
        + ";path=/;expires=" + expiry.toUTCString();
      document.cookie = name + "=" + value + ";path=/; expires="
          + expiry.toUTCString();
- };
-
-  
+ };  
   $.ajax({
         type: "POST",
         url: "https://app-test-78aef.firebaseio.com/users.json",
@@ -86,7 +84,7 @@ $.validator.setDefaults({
           form.submit();
         },
         failure:function(){
-          debugger
+         // debugger
         }
     });
     return false; // required to block normal submit since you used ajax
