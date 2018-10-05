@@ -42,13 +42,45 @@ $.validator.setDefaults({
   submitHandler: function (form) {
     var param = {username: $('#username').val(), company: $('#company').val(), email: $('#email').val() };
    var myDate = new Date();
+   myDate.setMonth(myDate.getMonth() + 12);
+   var cookieName = 'appninjauser';
+  var cookieValue = param.email;
+  var age = 40000;
+
+
+  function getTopLevelDomain() {
+   var i = 0, domain = document.domain, parts = domain.split('.'),
+       tmpCookie = "_zg" + (new Date()).getTime();
+   while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
+       + tmpCookie) == -1) {
+     domain = parts.slice(-1 - (++i)).join('.');
+     document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
+   }
+   //deletes the tmp cookie.
+   document.cookie = tmpCookie
+       + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=" + domain + ";";
+   return domain;
+ };
+
+ function setCookie(name, value, age) {
+   debugger;
+   var expiry = new Date(+new Date() + age);
+   var domain = getTopLevelDomain() || location.hostname;
+   document.cookie = name + "=" + value + ";domain=." + domain
+       + ";path=/;expires=" + expiry.toUTCString();
+     document.cookie = name + "=" + value + ";path=/; expires="
+         + expiry.toUTCString();
+ };
+
+  
   $.ajax({
         type: "POST",
         url: "https://app-test-78aef.firebaseio.com/users.json",
         data: JSON.stringify(param),
         success: function () {
-          document.cookie = "appninjauser="+param.email+";domain=.appninja.org; path=/expires=" + myDate;
-          
+          setCookie(cookieName, cookieValue, age)
+          // document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate 
+          //         + ";domain=.appninja.org;path=/";           
           console.log("form submit");
           // debugger
           form.submit();
@@ -86,6 +118,9 @@ $.validator.setDefaults({
 				email: "Please enter a valid email address",
 			}
 		});
+
+    
+
   })
   </script>
 
