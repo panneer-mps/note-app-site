@@ -59,6 +59,7 @@
          };  
          $.get('https://app-test-78aef.firebaseio.com/users.json')
             .done(function(response) {
+             // debugger
                 console.log("success", response);
                 for (x in response) {
                   var ll= response[x]
@@ -66,8 +67,10 @@
                     console.log("sam--true");
                     setCookie(cookieName, cookieValue, age)
                     form.submit();
+                    //return false
                   }
                   else{
+                   // debugger
                     // $('#email').addClass('error');
                     // $('#email-error').text('Please enter a valid email address')
                     // $('#email-error').css("display: block;")
@@ -146,7 +149,7 @@
 
 
 
-      <form action="http://localhost:7777/" id="fm-form" >
+      <form action="https://notes.appninja.org/" id="fm-form" >
       
         <h1>Try Appninja free trial</h1>        
         <fieldset>
