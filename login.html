@@ -1,207 +1,200 @@
 <html>
-<head>
-        <script> function createFcn(nm){(window.freshsales)[nm]=function(){(window.freshsales).push([nm].concat(Array.prototype.slice.call(arguments,0)))}; } (function(url,appToken,formCapture){window.freshsales=window.freshsales||[];if(window.freshsales.length==0){list='init identify trackPageView trackEvent set'.split(' ');for(var i=0;i<list.length;i++){var nm=list[i];createFcn(nm);}var t=document.createElement('script');t.async=1;t.src='//d952cmcgwqsjf.cloudfront.net/assets/analytics.js';var ft=document.getElementsByTagName('script')[0];ft.parentNode.insertBefore(t,ft);freshsales.init('//appninja.freshsales.io','b5e1fd16def90e823ba817d6835969ab137a108377ebde4fd2ba8897e7d6d492',true);}})();</script>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Appninja - Sign Up</title>
-        <link rel="stylesheet" href="css/style.css">        
-        <link rel="stylesheet" href="signup.css">
-        <link rel="icon" size="64x64" type="image/png" href="assets/images/branding/fav-freshnotes.png"/>        
-        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <script src='//cdn.freshmarketer.com/220708/765180.js'></script>
-        <script src="https://wchat.freshchat.com/js/widget.js"></script>
-      </head>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" ></script>
-    <script type="text/javascript">
-      // var cookieName = 'HelloWorld';
-      // var cookieValue = 'HelloWorld';
-      // var myDate = new Date();
-      // myDate.setMonth(myDate.getMonth() + 12);
-      // document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate 
-      //                   + ";domain=.appninja.org;path=/";
 
-      // $("form").validate();
+<head>
+  <script> function createFcn(nm) { (window.freshsales)[nm] = function () { (window.freshsales).push([nm].concat(Array.prototype.slice.call(arguments, 0))) }; } (function (url, appToken, formCapture) { window.freshsales = window.freshsales || []; if (window.freshsales.length == 0) { list = 'init identify trackPageView trackEvent set'.split(' '); for (var i = 0; i < list.length; i++) { var nm = list[i]; createFcn(nm); } var t = document.createElement('script'); t.async = 1; t.src = '//d952cmcgwqsjf.cloudfront.net/assets/analytics.js'; var ft = document.getElementsByTagName('script')[0]; ft.parentNode.insertBefore(t, ft); freshsales.init('//appninja.freshsales.io', 'b5e1fd16def90e823ba817d6835969ab137a108377ebde4fd2ba8897e7d6d492', true); } })();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appninja - Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="signup.css">
+  <link rel="icon" size="64x64" type="image/png" href="assets/images/branding/fav-freshnotes.png" />
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <script src='//cdn.freshmarketer.com/220708/765180.js'></script>
+  <script src="https://wchat.freshchat.com/js/widget.js"></script>
+</head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD0eO1asSPwjoYkQPG-IKO0QtGYaKHGjpw",
+    authDomain: "app-test-78aef.firebaseapp.com",
+    databaseURL: "https://app-test-78aef.firebaseio.com",
+    projectId: "app-test-78aef",
+    storageBucket: "app-test-78aef.appspot.com",
+    messagingSenderId: "673305716422"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
       // validate signup form on keyup and submit
       $.validator.setDefaults({
-        
-          submitHandler: function (form) {
-            var param = {email: $('#email').val() };
-           var myDate = new Date();
-           myDate.setMonth(myDate.getMonth() + 12);
-           var cookieName = 'appninjauser';
+
+        submitHandler: function (form) {
+          var param = { email: $('#email').val() };
+          var myDate = new Date();
+          myDate.setMonth(myDate.getMonth() + 12);
+          var cookieName = 'appninjauser';
           var cookieValue = param.email;
           var age = 86400000;
-        
-        
-          function getTopLevelDomain() {
-           var i = 0, domain = document.domain, parts = domain.split('.'),
-               tmpCookie = "_zg" + (new Date()).getTime();
-           while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
-               + tmpCookie) == -1) {
-             domain = parts.slice(-1 - (++i)).join('.');
-             document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
-           }
-           //deletes the tmp cookie.
-           document.cookie = tmpCookie
-               + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=" + domain + ";";
-           return domain;
-         };
-        
-         function setCookie(name, value, age) {
-          //  debugger;
-           var expiry = new Date(+new Date() + age);
-           var domain = getTopLevelDomain() || location.hostname;
-           document.cookie = name + "=" + value + ";domain=." + domain
-               + ";path=/;expires=" + expiry.toUTCString();
-             document.cookie = name + "=" + value + ";path=/; expires="
-                 + expiry.toUTCString();
-         };  
-         $.get('https://app-test-78aef.firebaseio.com/users.json')
-            .done(function(response) {
-             // debugger
-                console.log("success", response);
-                for (x in response) {
-                  var ll= response[x]
-                  if(ll.email==cookieValue){
-                    console.log("sam--true");
-                    setCookie(cookieName, cookieValue, age)
-                    form.submit();
-                    // return false
-                  }
-                  else{
-                  //  debugger
-                  //  var erroeHtml= '<label id="email-error" class="error" for="email">Please enter a valid email address</label>';
+          var usersRef = firebase.database().ref("users/");
 
-                    // $('#email').removeClass('valid').addClass('error');
-                    // $('#email-error').text('Please enter a valid email address')
-                    // $('#email-error').css("display: block;")
-                    
-                    console.log("Couldn't find your Account")
-                  }
-                  }
-                // debugger;
-                // $("#mypar").html(response.amount);
-        });
-            return false; // required to block normal submit since you used ajax
+          function getTopLevelDomain() {
+            var i = 0, domain = document.domain, parts = domain.split('.'),
+              tmpCookie = "_zg" + (new Date()).getTime();
+            while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
+              + tmpCookie) == -1) {
+              domain = parts.slice(-1 - (++i)).join('.');
+              document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
+            }
+            //deletes the tmp cookie.
+            document.cookie = tmpCookie
+              + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=" + domain + ";";
+            return domain;
+          };
+
+          function setCookie(name, value, age) {
+            var expiry = new Date(+new Date() + age);
+            var domain = getTopLevelDomain() || location.hostname;
+            document.cookie = name + "=" + value + ";domain=." + domain
+              + ";path=/;expires=" + expiry.toUTCString();
+            document.cookie = name + "=" + value + ";path=/; expires="
+              + expiry.toUTCString();
+          };
+
+          usersRef.orderByChild("email").equalTo(param.email).once('value').then(function (snapshot) {
+            if (snapshot.val()) {
+              var curentEmail = Object.values(snapshot.val())[0];
+              setCookie(cookieName, cookieValue, age)
+              form.submit();
+            } else {
+              // handle else part
+            }
+          }, function (error) {
+            console.error(error);
+          });
+          return false; // required to block normal submit since you used ajax
+        }
+      });
+
+      $(document).ready(function () {
+        $("#fm-form").validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            }
+          },
+          messages: {
+            email: "Please enter a valid email address",
           }
         });
-        
-  $(document).ready(function(){
-		$("#fm-form").validate({
-			rules: {
-				email: {
-					required: true,
-					email: true
-				}
-			},
-			messages: {
-				email: "Please enter a valid email address",
-			}
-		});
-  })
-  </script>
+      })
+</script>
 
-    <body>
-<!--   Header section -->
-<nav>
-  <div class="epics-nav-wrap">
-    <div class="epics-nav-sec">
-      <div class="epics-logo-wrap">
-        <a class="epics-logo" href="/"></a>
-        <span class="nav-burger">
-          <span class="nav-burger-icon"></span>
-        </span>
+<body>
+  <!--   Header section -->
+  <nav>
+    <div class="epics-nav-wrap">
+      <div class="epics-nav-sec">
+        <div class="epics-logo-wrap">
+          <a class="epics-logo" href="/"></a>
+          <span class="nav-burger">
+            <span class="nav-burger-icon"></span>
+          </span>
+        </div>
+        <ul class="epic-nav-list epic-nav-main-menu">
+          <li class="nav-item">
+            <a href="http://help.appninja.org/support/home" class="epic-nav-label" target="blank">Support</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing" class="epic-nav-label">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="signup" class="epic-nav-label">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://notes.appninja.org/" class="epic-nav-label">Login</a>
+          </li>
+        </ul>
       </div>
-      <ul class="epic-nav-list epic-nav-main-menu">
-        <li class="nav-item">
-          <a href="http://help.appninja.org/support/home" class="epic-nav-label" target="blank">Support</a>
-        </li>
-        <li class="nav-item">
-          <a href="pricing" class="epic-nav-label">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a href="signup" class="epic-nav-label">Signup</a>
-        </li>
-        <li class="nav-item">
-          <a href="https://notes.appninja.org/" class="epic-nav-label">Login</a>
-        </li>
-      </ul>
     </div>
-  </div>
-    </nav>
-<!--   Banner section -->
-<section class="epics-banner epics-sect" style="padding: 160px 0 100px;">
+  </nav>
+  <!--   Banner section -->
+  <section class="epics-banner epics-sect" style="padding: 160px 0 100px;">
     <div class="epics-wrap epics-align-center">
       <div class="epics-row font-color-light">
-          <h1>21-day FREE trial. No credit card required.</h1>
-          <p class="epics-sub-text">Write wherever inspiration strikes</p>
-          <!-- <div class="price-selet pric-sclr3 re-bg">
-              <a class="popup-with-zoom-anim top-btn-banner" href="signup">Try for Free</a>
-         </div> -->
-          <!-- <div class="search-wrap">
-             <form autocomplete="off" action="#" method="POST" novalidate="novalidate" class="epics-search" >
-                <div class="email-field">
-                   <input type="email" name="" class="search-box" placeholder="Search For Software and Services..." aria-required="true">
-              </div>
-          </form>
-        </div> -->
+        <h1>21-day FREE trial. No credit card required.</h1>
+        <p class="epics-sub-text">Write wherever inspiration strikes</p>
       </div>
+    </div>
+  </section>
+
+
+
+  <form action="https://notes.appninja.org/" id="fm-form">
+
+    <h1>Log in with your Appninja Account</h1>
+    <fieldset>
+      <div class="fields-wrap">
+        <label for="mail">Email:</label>
+        <input type="email" id="email" name="email">
       </div>
-      </section>
-
-
-
-      <form action="https://notes.appninja.org/" id="fm-form" >
-      
-        <h1>Log in with your Appninja Account</h1>        
-        <fieldset>
-        <div class="fields-wrap">
-          <label for="mail">Email:</label>
-          <input type="email" id="email" name="email">
+    </fieldset>
+    <button type="submit">Login</button>
+  </form>
+  <footer class="epics-footer">
+    <div class="epics-wrap">
+      <div class="footer-wrap">
+        <div class="footer-sec footer-left-sec">
+          <div class="footer-links-wrap">
+            <h4>Company</h4>
+            <ul>
+              <li>
+                <a href="#">Categories</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links-wrap footer-resource">
+            <h4>Resources</h4>
+            <ul>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links-wrap social-links">
+            <h4>Connect with us</h4>
+            <ul>
+              <li>
+                <a href="#" class="icon-facebook"></a>
+              </li>
+              <li>
+                <a href="#" class="icon-linkedin"></a>
+              </li>
+              <li>
+                <a href="#" class="icon-twitter"></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        </fieldset>
-        <button type="submit" >Login</button>
-      </form>
-      <footer class="epics-footer">
-        <div class="epics-wrap">
-            <div class="footer-wrap">
-              <div class="footer-sec footer-left-sec">
-                <div class="footer-links-wrap">
-                  <h4>Company</h4>
-                  <ul>
-                    <li><a href="#">Categories</a></li>
-                  </ul>
-                </div>
-                <div class="footer-links-wrap footer-resource">
-                  <h4>Resources</h4>
-                  <ul>
-                    <li><a href="#">Blog</a></li>
-                  </ul>
-                </div>
-                <div class="footer-links-wrap social-links">
-                  <h4>Connect with us</h4>
-                  <ul>
-                    <li><a href="#" class="icon-facebook"></a></li>
-                    <li><a href="#" class="icon-linkedin"></a></li>
-                    <li><a href="#" class="icon-twitter"></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="footer-sec footer-right-sec">
-                <div class="footer-logo-wrap">
-                <a class="epics-logo" href="/"></a>
-              </div>
-              </div>
-            </div>
+        <div class="footer-sec footer-right-sec">
+          <div class="footer-logo-wrap">
+            <a class="epics-logo" href="/"></a>
+          </div>
         </div>
-        <div class="footer-copyrights">
-              <div class=" epics-align-center">
-                <p class="footer-copyrights-text">Copyright © Appninja Inc. All Rights Reserved</p>
-              </div>
-            </div>
-      </footer>
-      <script> window.fcWidget.init({ token: "87cc47b8-bbdc-4cd5-aacd-e4f8a57765c5", host: "https://wchat.freshchat.com" }); </script>
-      
-    </body>
+      </div>
+    </div>
+    <div class="footer-copyrights">
+      <div class=" epics-align-center">
+        <p class="footer-copyrights-text">Copyright © Appninja Inc. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script> window.fcWidget.init({ token: "87cc47b8-bbdc-4cd5-aacd-e4f8a57765c5", host: "https://wchat.freshchat.com" }); </script>
+
+</body>
+
 </html>
