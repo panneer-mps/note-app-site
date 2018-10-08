@@ -46,7 +46,7 @@
             while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
               + tmpCookie) == -1) {
               domain = parts.slice(-1 - (++i)).join('.');
-              document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
+              document.cookie = tmpCookie + "=" + tmpCookie + ";domain=." + domain + ";";
             }
             //deletes the tmp cookie.
             document.cookie = tmpCookie
