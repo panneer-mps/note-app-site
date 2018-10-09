@@ -30,8 +30,9 @@
 
 <script type="text/javascript">
       $.validator.setDefaults({
-
+          
         submitHandler: function (form) {
+          
           var param = { username: $('#username').val(), company: $('#company').val(), email: $('#email').val() };
           var myDate = new Date();
           myDate.setMonth(myDate.getMonth() + 12);
@@ -46,7 +47,7 @@
             while (i < (parts.length - 1) && document.cookie.indexOf(tmpCookie + '='
               + tmpCookie) == -1) {
               domain = parts.slice(-1 - (++i)).join('.');
-              document.cookie = tmpCookie + "=" + tmpCookie + ";domain=" + domain + ";";
+              document.cookie = tmpCookie + "=" + tmpCookie + ";domain= " + domain + ";";
             }
             //deletes the tmp cookie.
             document.cookie = tmpCookie
@@ -65,11 +66,11 @@
           };
 
           usersRef.orderByChild("email").equalTo(param.email).once('value').then(function (snapshot) {
-            debugger
             if (!snapshot.val()) {
+              $('#signupbtn').text('Loading....');
               successSignUp();
             } else {
-              alert("Already exist")
+              alert("Email exist")
               // handle else part
             }
           }, function (error) {
@@ -182,7 +183,7 @@
         <input type="text" id="company" name="company">
       </div>
     </fieldset>
-    <button type="submit">Sign Up</button>
+    <button type="submit" id="signupbtn">Sign Up</button>
   </form>
   <footer class="epics-footer">
     <div class="epics-wrap">

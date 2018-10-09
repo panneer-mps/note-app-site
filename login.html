@@ -66,11 +66,13 @@
 
           usersRef.orderByChild("email").equalTo(param.email).once('value').then(function (snapshot) {
             if (snapshot.val()) {
+              $('#signupbtn').text('Loading....');
               var curentEmail = Object.values(snapshot.val())[0];
               setCookie(cookieName, cookieValue, age)
               form.submit();
             } else {
               // handle else part
+              alert("No account exist")
             }
           }, function (error) {
             console.error(error);
@@ -143,7 +145,7 @@
         <input type="email" id="email" name="email">
       </div>
     </fieldset>
-    <button type="submit">Login</button>
+    <button type="submit" id="signupbtn">Login</button>
   </form>
   <footer class="epics-footer">
     <div class="epics-wrap">
