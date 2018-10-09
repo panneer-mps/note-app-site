@@ -151,9 +151,9 @@ p, .p{
   /* background-image: linear-gradient(to right bottom, #34c1e8, #00cfde, #00dac6, #5de1a5, #99e581); */
   padding: 200px 0;
   /* background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%); */
-  background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
-  
-  
+  /* background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%); */
+  background-image: url('../assets/images/branding/banner-bg.png');
+
 }
 .epics-wrap{
   max-width: 1140px;
@@ -284,7 +284,7 @@ p, .p{
     font-weight: bold;
     /* background:#525204; */
     background: #CECE24;
-    
+
 }
 a.epics-btn-visit {
   border: 1px solid #b3b3b3;
@@ -436,7 +436,7 @@ a.epics-btn-visit {
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 9; 
+    z-index: 9;
     background: rgba(0, 0, 0, 0.25);
   }
   .nav-item a{
@@ -909,7 +909,7 @@ p.footer-copyrights-text {
   .epics-top-rated-sec{
         width: 90%;
   }
-  
+
   h2 {
     font-size: 1.5rem;
   }
@@ -935,7 +935,7 @@ p.footer-copyrights-text {
     border-bottom-left-radius: 0;
     width: 90%;
   }
-  
+
   .blog-box {
   float: none;
     width: 80%;
@@ -951,4 +951,3 @@ p.footer-copyrights-text {
 }
 
 }
-

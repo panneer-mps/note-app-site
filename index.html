@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Appninja</title>
     <link rel="icon" size="64x64" type="image/png" href="assets/images/branding/fav-freshnotes.png"/>
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"> 
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <link href="css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src='//cdn.freshmarketer.com/220708/765180.js'></script>
     <script src="https://wchat.freshchat.com/js/widget.js"></script>
   </head>
 <body>
-    
+
 <!--   Header section -->
   <nav>
       <div class="epics-nav-wrap">
@@ -231,8 +231,23 @@
           </div>
     </footer>
 
-    <script> window.fcWidget.init({ token: "87cc47b8-bbdc-4cd5-aacd-e4f8a57765c5", host: "https://wchat.freshchat.com" }); </script>
-    
+    <script>
+     window.fcWidget.init({ token: "87cc47b8-bbdc-4cd5-aacd-e4f8a57765c5", host: "https://wchat.freshchat.com" });
+     window.fcWidget.setExternalId("joe.smith");
+      // To set user name
+      window.fcWidget.user.setFirstName("Joe");
+      window.fcWidget.user.setLastName("Smith");
+
+      // To set user email
+      window.fcWidget.user.setEmail("joe.smithfd@gmail.com");
+
+      // To set user properties
+      window.fcWidget.user.setProperties({
+        plan: "Premium",                 // meta property 1
+        status: "Lead"                // meta property 2
+      });
+   </script>
+
 
 </body>
 
