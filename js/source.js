@@ -11,4 +11,4 @@
 //  window.fcWidget.user.setProperties({
  //  plan: "Premium",                 // meta property 1
   // status: "Lead"                // meta property 2
- });
+//  });
